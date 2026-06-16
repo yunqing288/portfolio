@@ -1,0 +1,71 @@
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="ai-companion" name="AI 陪伴系统架构">
+    <mxGraphModel dx="1100" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 顶部输入：用户 + 时间感知 -->
+        <mxCell id="user" value="用户发消息" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="200" y="40" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="time" value="时间感知 · 共享底层&#10;知道几点 · 定时触发 · 深夜催睡" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="620" y="25" width="600" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- 被动响应系统 -->
+        <mxCell id="pasvBox" value="🟦 被动响应系统 · 用户发消息时触发" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;fontStyle=1;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="120" y="170" width="540" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" value="装包裹：人设 · 人生故事 · 最近对话&#10;内心OS/活动 · 当前时间" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="150" y="215" width="480" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="A / B 双路兜底检索（向量召回）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="150" y="285" width="480" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="生成回复 → 拆条发出" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="150" y="340" width="480" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- 主动自发系统 -->
+        <mxCell id="actvBox" value="🟧 主动自发系统 · 每小时 Life Tick 自跑" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;verticalAlign=top;fontStyle=1;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="740" y="170" width="540" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="决定活动 / 心情" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="770" y="215" width="480" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="要不要主动找你" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="770" y="270" width="480" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="可选上网 → 沉淀兴趣" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="770" y="325" width="480" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- 记忆底座 -->
+        <mxCell id="memBox" value="记忆底座 · 三层金字塔 + 向量召回" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;fontStyle=1;fontSize=13" vertex="1" parent="1">
+          <mxGeometry x="320" y="500" width="760" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" value="Tier1 大事件 结构化 · 状态层常驻&#10;Tier2 摘要 轻头 + 自由文本正文&#10;Tier3 原始存档 永不删除" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="355" y="545" width="690" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="m2" value="向量三池 events / summaries / qa&#10;分池配额 · 不合榜 · 相关度地板" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="355" y="665" width="690" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- 连线 -->
+        <mxCell id="e0" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;" edge="1" parent="1" source="user" target="p1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;" edge="1" parent="1" source="p1" target="p2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;" edge="1" parent="1" source="p2" target="p3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;" edge="1" parent="1" source="a1" target="a2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;" edge="1" parent="1" source="a2" target="a3"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e5" value="知道几点" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;dashed=1;strokeColor=#666666;" edge="1" parent="1" source="time" target="pasvBox"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" value="定时触发" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;dashed=1;strokeColor=#666666;" edge="1" parent="1" source="time" target="actvBox"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e7" value="读 / 写" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;" edge="1" parent="1" source="pasvBox" target="memBox"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" value="读 / 写" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;" edge="1" parent="1" source="actvBox" target="memBox"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;" edge="1" parent="1" source="m1" target="m2"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
